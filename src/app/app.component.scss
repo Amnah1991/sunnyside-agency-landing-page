@@ -1,5 +1,79 @@
 @import "../styles.scss";
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+
+// -------------------------  Common  ------------------------
+.box-heading {
+    font-weight: 900;
+    font-size  : 30px;
+}
+
+.text {
+    font-family: 'Barlow', sans-serif;
+    color      : $dark-grayish-blue;
+    line-height: 1.5rem;
+    font-size  : 18px;
+}
+
+.link {
+    font-weight   : 900;
+    text-transform: uppercase;
+    position      : relative;
+}
+
+.link:after {
+    content      : '';
+    position     : absolute;
+    height       : 6px;
+    width        : 110%;
+    opacity      : 50%;
+    border-radius: 50px;
+    top          : 12px;
+    left         : -5%;
+    text-align   : center;
+    z-index      : -100;
+}
+
+
+.section {
+    display  : flex;
+    height   : 60%;
+    max-width: 100%;
+    overflow : hidden;
+}
+
+.image-box {
+    flex-basis         : 50%;
+    height             : 100%;
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : cover;
+}
+
+.text-box {
+    flex-basis     : 50%;
+    width          : 100%;
+    display        : flex;
+    flex-direction : column;
+    height         : 100%;
+    justify-content: center;
+    align-items    : center;
+
+    .wrapper {
+        width : 70%;
+        height: 60%;
+
+        .box-heading {
+            height        : auto;
+            padding-bottom: 30px;
+        }
+
+        .text {
+            height: 40%;
+        }
+    }
+
+}
 
 
 
@@ -55,7 +129,7 @@ header {
     background-color: $white;
 }
 
-.header-heading {
+.main-heading {
     flex          : 0 0 100%;
     text-align    : center;
     padding-top   : 10%;
@@ -66,7 +140,7 @@ header {
     text-transform: uppercase;
 }
 
-.header-heading:after {
+.main-heading:after {
     display         : block;
     content         : ' ';
     background-image: url('../assets/images/icon-arrow-down.svg');
@@ -78,30 +152,196 @@ header {
     margin-top      : 7%;
 }
 
-// -------------------------  Transformation  ------------------------
 
 .transformation {
-    display  : flex;
-    height   : 60%;
-    max-width: 100%;
-    overflow : hidden;
+    .text-box {
+        .link:after {
+            background-color: $yellow;
+        }
+    }
+
+    .image-box {
+        background-image: url('../assets/images/desktop/image-transform.jpg');
+    }
 }
 
-.flex-box1 {
-    flex          : 1 1 0;
-    width         : 0;
+.stand-out {
+    .text-box {
+        .link:after {
+            background-color: $soft-red;
+        }
+    }
+
+    .image-box {
+        background-image: url('../assets/images/desktop/image-stand-out.jpg');
+    }
+}
+
+
+.services {
+    .image-box {
+        display        : flex;
+        flex-direction : column;
+        text-align     : center;
+        height         : 100%;
+        justify-content: center;
+        align-items    : center;
+    }
+
+    .wrapper {
+        width      : 60%;
+        height     : auto;
+        padding-top: 30%;
+
+        .box-heading {
+            height        : auto;
+            padding-bottom: 30px;
+            color         : $dark-blue;
+        }
+
+        .text {
+            height: 40%;
+            color : $dark-desaturate-cyan;
+        }
+    }
+
+    .image-box.left {
+        background-image: url('../assets/images/desktop/image-graphic-design.jpg');
+    }
+
+    .image-box.right {
+        background-image: url('../assets/images/desktop/image-photography.jpg');
+    }
+
+}
+
+
+section.clients {
     display       : flex;
+    align-items   : center;
     flex-direction: column;
-    height: 100%;
+    text-align    : center;
+    padding       : 70px 0;
 }
 
-.flex-box2 {
-    flex : 1 1 0;
-    width: 0;
-    height: 100%;
-    background-image   : url('../assets/images/desktop/image-transform.jpg');
-    background-position: center;
-    background-repeat  : no-repeat;
-    background-size    : cover;
+.client-heading {
+    color         : $grayish-blue;
+    text-transform: uppercase;
+    letter-spacing: 8px;
 }
 
+.flex-row {
+    display        : flex;
+    height         : 100%;
+    width          : 80%;
+    justify-content: space-between;
+}
+
+.flex-item {
+    height         : 350px;
+    width          : 300px;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+
+    .text {
+        color      : $dark-blue;
+        line-height: 30px;
+        font-size  : 16px;
+        display    : flex;
+        align-items: center;
+    }
+
+    .client-name {
+        color         : $dark-blue;
+        height        : auto;
+        padding-bottom: 8px;
+
+    }
+
+    .client-position {
+        color      : $grayish-blue;
+        font-size  : 12px;
+        font-weight: 600;
+        font-family: Barlow;
+        height     : auto;
+    }
+}
+
+.client-photo {
+    width    : 100px;
+    height   : auto;
+    clip-path: circle();
+}
+
+.image-gallery {
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows   : 1fr;
+    height               : auto;
+}
+
+.image-gallery-item {
+    width : 100% !important;
+    height: auto !important;
+}
+
+.footer {
+    background-color: $dark-moderate-cyan;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    height          : auto !important;
+    padding         : 70px 0;
+}
+
+
+.footer-logo {
+    margin-top: 20px;
+    height    : auto;
+
+    svg {
+        height: 70px;
+
+        path {
+            fill: $dark-desaturate-cyan;
+        }
+    }
+}
+
+.footer-links {
+    width          : 30%;
+    height         : 100%;
+    display        : flex;
+    justify-content: space-between;
+}
+
+.footer-link {
+    height         : auto;
+    color          : $dark-desaturate-cyan;
+    font-size      : 18px;
+    font-weight    : 600;
+    font-family    : Barlow;
+    text-decoration: none;
+}
+
+.footer-icons {
+    display        : flex;
+    align-items    : center;
+    justify-content: space-between;
+    width          : 15%;
+    height         : auto;
+    padding-top    : 100px;
+}
+
+.icon {
+    width : 25px !important;
+    height: auto;
+}
+
+svg.icon {
+    path {
+        fill: $dark-desaturate-cyan;
+    }
+}

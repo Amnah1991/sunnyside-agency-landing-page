@@ -1,14 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-
-
-
 // Primary Colors
 $soft-red: hsl(7, 99%, 70%);
 $yellow: hsl(51, 100%, 49%);
 $dark-desaturate-cyan: hsl(167, 40%, 24%);
 $dark-blue: hsl(198, 62%, 26%);
-$dark-moderate-cyan: hsl(168, 34%, 41%);
+$dark-moderate-cyan:  hsl(166,47%,73%);
 
 
 // Neutral Colors
@@ -21,7 +18,8 @@ $white: hsl(0, 0%, 100%);
 
 *,
 html {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Fraunces', serif;
     height: 100vh;
     margin: 0 !important;
 }
+
