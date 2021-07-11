@@ -6,6 +6,7 @@
 .box-heading {
     font-weight: 900;
     font-size  : 30px;
+    color      : $very-dark-desaturated-blue;
 }
 
 .text {
@@ -52,16 +53,17 @@
 
 .text-box {
     flex-basis     : 50%;
-    width          : 100%;
     display        : flex;
     flex-direction : column;
     height         : 100%;
     justify-content: center;
     align-items    : center;
 
+
     .wrapper {
         width : 70%;
-        height: 60%;
+        height: 50%;
+
 
         .box-heading {
             height        : auto;
@@ -69,7 +71,7 @@
         }
 
         .text {
-            height: 40%;
+            height: 50%;
         }
     }
 
@@ -153,6 +155,8 @@ header {
 }
 
 
+// -------------------------  Sections  ------------------------
+
 .transformation {
     .text-box {
         .link:after {
@@ -180,18 +184,18 @@ header {
 
 .services {
     .image-box {
-        display        : flex;
-        flex-direction : column;
-        text-align     : center;
-        height         : 100%;
-        justify-content: center;
-        align-items    : center;
+        display       : flex;
+        flex-basis    : 100%;
+        flex-direction: column;
+        text-align    : center;
+        align-items   : center;
     }
 
     .wrapper {
         width      : 60%;
         height     : auto;
-        padding-top: 30%;
+        padding-top: 40%;
+
 
         .box-heading {
             height        : auto;
@@ -200,7 +204,7 @@ header {
         }
 
         .text {
-            height: 40%;
+            height: auto;
             color : $dark-desaturate-cyan;
         }
     }
@@ -228,6 +232,8 @@ section.clients {
     color         : $grayish-blue;
     text-transform: uppercase;
     letter-spacing: 8px;
+    height        : auto;
+    padding-bottom: 70px;
 }
 
 .flex-row {
@@ -287,6 +293,7 @@ section.clients {
     height: auto !important;
 }
 
+//........................ Footer ................................
 .footer {
     background-color: $dark-moderate-cyan;
     display         : flex;
@@ -344,4 +351,89 @@ svg.icon {
     path {
         fill: $dark-desaturate-cyan;
     }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .section {
+        flex-direction: column;
+        height        : 100%;
+    }
+
+    .section.transformation {
+        flex-direction: column-reverse;
+    }
+
+    .text-box {
+        flex-basis: 60%;
+
+        .wrapper {
+            height    : 70%;
+            width     : 80%;
+            text-align: center;
+        }
+
+        .text {
+            font-size     : 16px;
+            line-height   : 2rem;
+            padding-bottom: 30px;
+        }
+    }
+
+
+
+    .stand-out,
+    .transformation {
+        .image-box {
+            flex-basis: 40%;
+        }
+    }
+
+
+    .services {
+        flex-direction: column;
+        height        : auto;
+
+        .wrapper {
+            width         : 87%;
+            padding-top   : 90%;
+            padding-bottom: 10%;
+        }
+
+        .image-box {
+            flex-basis: 0;
+        }
+    }
+
+    .clients {
+        height: auto;
+        padding: 0;
+    }
+
+    .client-heading {
+        font-size     : 18px;
+        letter-spacing: 4px;
+    }
+
+    .flex-row {
+        align-items   : center;
+        flex-direction: column;
+        text-align    : center;
+        width         : 70%;
+    }
+
+    .flex-item {
+        margin-bottom: 70px !important;
+        height       : 275px;
+        width        : 300px;
+    }
+
+
+    .image-gallery {
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+
 }
