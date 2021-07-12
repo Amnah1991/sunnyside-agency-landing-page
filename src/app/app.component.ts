@@ -9,11 +9,11 @@ export class AppComponent {
   title = 'Sunnyside Agency';
 
   toggleNav() {
-    if (document.getElementById("toggleNav").style.visibility === "hidden") {
-      document.querySelector("#toggleNav").style.visibility = "visible";
+    if ((document.getElementById("toggleNav") as HTMLElement).style.visibility === "hidden") {
+      (document.querySelector("#toggleNav") as HTMLElement).style.visibility = "visible";
 
     } else {
-      document.querySelector("#toggleNav").style.visibility = "hidden";
+      (document.querySelector("#toggleNav") as HTMLElement).style.visibility = "hidden";
     }
   }
 
