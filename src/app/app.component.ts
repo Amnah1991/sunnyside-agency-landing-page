@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sunnyside-agency-landing-page';
+  title = 'Sunnyside Agency';
+
+  toggleNav() {
+    if (document.getElementById("toggleNav").style.visibility === "hidden") {
+      document.querySelector("#toggleNav").style.visibility = "visible";
+
+    } else {
+      document.querySelector("#toggleNav").style.visibility = "hidden";
+    }
+  }
+
+
 }
